@@ -1,0 +1,50 @@
+{
+	"vcd": [
+		{
+			"url": "VCD HOST",
+			"publicUrlBase": "PUBLIC URL BASE",
+			"uiEndPoint": "UI END POINT",
+			"systemExchange": "SYSTEM EXCHANGE",
+			"systemPrefix": "SYSTEM PREFIX",
+			"userName": "VCD USER NAME",
+			"password": "VCD PASSWORD"
+		}
+	],
+	"rmq": {
+		"hosts": [
+			{
+				"host": "10.144.99.33",
+				"port": "15678"
+			},
+			{
+				"host": "110.244.199.133"
+			},
+			{
+				"host": "20.200.20.200",
+				"port": "25678"
+			}
+		],
+		"vhost": "VHOST"
+	},
+	"nsx": [
+		{
+			"url": "NSX HOST",
+			"userName": "NSX USER NAME",
+			"password": "NSX PASSWORD"
+		},
+		{
+			"url": "NSX HOST2",
+			"userName": "NSX USER NAME2",
+			"password": "NSX PASSWORD"
+		}
+	],
+	"presto": {
+		"configured": "IS CONFIGURED",
+		"responseQueue": "RESPONSE QUEUE",
+		"requestExchange": "REQ EXCHANGE",
+		"requestRoutingKey": "REQ ROUTING KEY"
+	},
+	"nsp": {
+		"baseProxyUrl": "PROXY URL"
+	}
+}

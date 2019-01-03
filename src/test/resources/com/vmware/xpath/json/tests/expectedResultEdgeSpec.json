@@ -1,0 +1,92 @@
+{
+  "datacenterMoid": "datacenter-1",
+  "name": "TestEdge-0001",
+  "description": "Description for the edge gateway",
+  "tenant": "DEFAULT",
+  "vseLogLevel": "info",
+  "enableAesni": "false",
+  "enableFips": "true",
+  "appliances": {
+    "applianceSize": "compact",
+    "deployAppliances": true,
+    "enableCoreDump": "true",
+    "appliances": [{
+      "resourcePoolId": "resourcePool-39",
+      "datastoreId": "datastore-21",
+      "vseLogLevel": "info"
+    }]
+  },
+  "vnics": {"vnics": [
+    {
+      "label": "dvpg-23",
+      "name": "dvpg-23",
+      "addressGroups": {"addressGroups": [{
+        "primaryAddress": "192.168.10.1",
+        "secondaryAddresses": {
+          "type": "secondary_addresses",
+          "ipAddress": [
+            "192.168.10.2",
+            "192.168.10.3",
+            "192.168.10.4"
+          ]
+        },
+        "subnetMask": "255.255.254.0"
+      }]},
+      "mtu": 1500,
+      "type": "internal",
+      "isConnected": true,
+      "index": 0,
+      "portgroupId": "dvpg-23",
+      "fenceParameters": [],
+      "enableProxyArp": false,
+      "enableSendRedirects": false
+    },
+    {
+      "label": "dvpg-19",
+      "name": "dvpg-19",
+      "addressGroups": {"addressGroups": [{
+        "primaryAddress": "10.192.168.1",
+        "secondaryAddresses": {
+          "type": "secondary_addresses",
+          "ipAddress": [
+            "10.192.168.2",
+            "10.192.168.3",
+            "10.192.168.4"
+          ]
+        },
+        "subnetMask": "255.255.255.0"
+      }]},
+      "mtu": 1500,
+      "type": "uplink",
+      "isConnected": true,
+      "index": 1,
+      "portgroupId": "dvpg-19",
+      "fenceParameters": [],
+      "enableProxyArp": false,
+      "enableSendRedirects": false
+    },
+    {
+      "label": "virtualwire-12",
+      "name": "virtualwire-12",
+      "addressGroups": {"addressGroups": [{
+        "primaryAddress": "192.168.111.253",
+        "secondaryAddresses": {
+          "type": "secondary_addresses",
+          "ipAddress": [
+            "192.168.111.250",
+            "192.168.111.251"
+          ]
+        },
+        "subnetMask": "255.255.252.0"
+      }]},
+      "mtu": 1500,
+      "type": "internal",
+      "isConnected": true,
+      "index": 2,
+      "portgroupId": "virtualwire-12",
+      "fenceParameters": [],
+      "enableProxyArp": false,
+      "enableSendRedirects": false
+    }
+  ]}
+}

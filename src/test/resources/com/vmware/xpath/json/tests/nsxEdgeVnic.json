@@ -1,0 +1,27 @@
+{
+    "label": "toBeUpdated",
+    "name": "toBeUpdated",
+    "addressGroups": {
+        "addressGroups": [
+            {
+                "primaryAddress":"toBeUpdated",
+                "secondaryAddresses":{
+                    "type": "secondary_addresses",
+                    "ipAddress": [
+                        "toBeUpdated.2",
+                        "toBeUpdated.3"
+                    ]
+                },
+                "subnetMask":"toBeUpdated"
+            }
+        ]
+    },
+    "mtu": 1500,
+    "type": "toBeUpdated",
+    "isConnected": true,
+    "index": "1",
+    "portgroupId": "virtualwire-15",
+    "fenceParameters": [],
+    "enableProxyArp": false,
+    "enableSendRedirects": false
+}

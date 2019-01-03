@@ -1,0 +1,101 @@
+{
+	"featureType": "firewall_4.0",
+	"version": 6,
+	"enabled": true,
+	"globalConfig": {
+		"tcpPickOngoingConnections": false,
+		"tcpAllowOutOfWindowPackets": false,
+		"tcpSendResetForClosedVsePorts": true,
+		"dropInvalidTraffic": true,
+		"logInvalidTraffic": false,
+		"tcpTimeoutOpen": 30,
+		"tcpTimeoutEstablished": 21600,
+		"tcpTimeoutClose": 30,
+		"udpTimeout": 60,
+		"icmpTimeout": 10,
+		"icmp6Timeout": 10,
+		"ipGenericTimeout": 120,
+		"enableSynFloodProtection": false,
+		"logIcmpErrors": false,
+		"dropIcmpReplays": false
+	},
+	"defaultPolicy": {
+		"action": "accept",
+		"loggingEnabled": true
+	},
+	"firewallRules": {
+		"firewallRules": [
+			{
+				"ruleId": 131074,
+				"ruleTag": 131074,
+				"name": "firewall",
+				"ruleType": "internal_high",
+				"enabled": true,
+				"loggingEnabled": false,
+				"description": "firewall",
+				"action": "accept",
+				"source": {
+					"exclude": false,
+					"ipAddress": [],
+					"groupingObjectId": [],
+					"vnicGroupId": [
+						"vse"
+					]
+				}
+			},
+			{
+				"ruleId": 133123,
+				"ruleTag": 133123,
+				"name": "test1",
+				"ruleType": "user",
+				"enabled": true,
+				"loggingEnabled": false,
+				"description": "",
+				"matchTranslated": false,
+				"action": "accept",
+				"source": {
+					"exclude": false,
+					"ipAddress": [
+						"80.80.80.0/23"
+					],
+					"groupingObjectId": [
+						"ipset-2",
+						"resgroup-65",
+						"vm-43",
+						"securitygroup-10",
+						"dvportgroup-40",
+						"ipset-3"
+					],
+					"vnicGroupId": [
+						"vse"
+					]
+				},
+				"destination": {
+					"exclude": false,
+					"ipAddress": [],
+					"groupingObjectId": [
+						"vm-58",
+						"ipset-4",
+						"ipset-3"
+					],
+					"vnicGroupId": [
+						"vnic-index-0"
+					]
+				},
+				"application": {
+					
+				}
+			},
+			{
+				"ruleId": 131073,
+				"ruleTag": 131073,
+				"name": "default rule for ingress traffic",
+				"ruleType": "default_policy",
+				"enabled": true,
+				"loggingEnabled": true,
+				"description": "default rule for ingress traffic",
+				"action": "accept"
+			}
+		]
+	}
+}

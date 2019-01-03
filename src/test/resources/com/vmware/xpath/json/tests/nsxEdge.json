@@ -1,0 +1,25 @@
+{
+	"datacenterMoid": "toBeUpdated",
+	"name": "toBeUpdated",
+	"description": "Description for the edge gateway",
+	"tenant": "DEFAULT",
+	"vseLogLevel": "info",
+	"enableAesni": "false",
+	"enableFips": "true",
+	"appliances": {
+		"applianceSize": "compact",
+		"deployAppliances": true,
+		"enableCoreDump": "true",
+		"appliances": [
+			{
+				"resourcePoolId": "toBeUpdated",
+				"datastoreId": "toBeUpdated",
+				"vseLogLevel": "info"
+			}
+		]
+	},
+	
+	"vnics" : {
+	   "vnics": []
+	}
+}

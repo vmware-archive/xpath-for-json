@@ -1,0 +1,913 @@
+{
+	"gatewayId": "d52543f4-9faf-4eab-a654-8c8e5fef2ac4",
+	"gatewayName": "gateway_1",
+	"gatewayVersion": null,
+	"vcdVersion": 0,
+	"gwRecord": {
+		"otherAttributes": {
+			
+		},
+		"link": [
+			{
+				"otherAttributes": {
+					
+				},
+				"href": "https://build-virtual-machine/api/admin/edgeGateway/d52543f4-9faf-4eab-a654-8c8e5fef2ac4",
+				"id": null,
+				"name": null,
+				"type": "application/vnd.vmware.admin.edgeGateway+xml",
+				"rel": "edit",
+				"vcloudExtension": []
+			},
+			{
+				"otherAttributes": {
+					
+				},
+				"href": "https://build-virtual-machine/api/admin/edgeGateway/d52543f4-9faf-4eab-a654-8c8e5fef2ac4",
+				"id": null,
+				"name": null,
+				"type": null,
+				"rel": "remove",
+				"vcloudExtension": []
+			},
+			{
+				"otherAttributes": {
+					
+				},
+				"href": "https://build-virtual-machine/api/admin/vdc/4f0e6b4e-aa33-4a2e-93de-8770740d2385",
+				"id": null,
+				"name": null,
+				"type": "application/vnd.vmware.admin.vdc+xml",
+				"rel": "up",
+				"vcloudExtension": []
+			},
+			{
+				"otherAttributes": {
+					
+				},
+				"href": "https://build-virtual-machine/api/admin/edgeGateway/d52543f4-9faf-4eab-a654-8c8e5fef2ac4/action/redeploy",
+				"id": null,
+				"name": null,
+				"type": null,
+				"rel": "edgeGateway:redeploy",
+				"vcloudExtension": []
+			},
+			{
+				"otherAttributes": {
+					
+				},
+				"href": "https://build-virtual-machine/api/admin/edgeGateway/d52543f4-9faf-4eab-a654-8c8e5fef2ac4/action/configureServices",
+				"id": null,
+				"name": null,
+				"type": "application/vnd.vmware.admin.edgeGatewayServiceConfiguration+xml",
+				"rel": "edgeGateway:configureServices",
+				"vcloudExtension": []
+			},
+			{
+				"otherAttributes": {
+					
+				},
+				"href": "https://build-virtual-machine/api/admin/edgeGateway/d52543f4-9faf-4eab-a654-8c8e5fef2ac4/action/convertToAdvancedNetworking",
+				"id": null,
+				"name": null,
+				"type": null,
+				"rel": "edgeGateway:convertToAdvancedNetworking",
+				"vcloudExtension": []
+			},
+			{
+				"otherAttributes": {
+					
+				},
+				"href": "https://build-virtual-machine/api/admin/edgeGateway/d52543f4-9faf-4eab-a654-8c8e5fef2ac4/action/configureSyslogServerSettings",
+				"id": null,
+				"name": null,
+				"type": "application/vnd.vmware.vcloud.SyslogSettings+xml",
+				"rel": "edgeGateway:configureSyslogServerSettings",
+				"vcloudExtension": []
+			},
+			{
+				"otherAttributes": {
+					
+				},
+				"href": "https://build-virtual-machine/api/admin/edgeGateway/d52543f4-9faf-4eab-a654-8c8e5fef2ac4/action/reapplyServices",
+				"id": null,
+				"name": null,
+				"type": null,
+				"rel": "edgeGateway:reapplyServices",
+				"vcloudExtension": []
+			},
+			{
+				"otherAttributes": {
+					
+				},
+				"href": "https://build-virtual-machine/api/admin/edgeGateway/d52543f4-9faf-4eab-a654-8c8e5fef2ac4/action/syncSyslogServerSettings",
+				"id": null,
+				"name": null,
+				"type": null,
+				"rel": "edgeGateway:syncSyslogSettings",
+				"vcloudExtension": []
+			},
+			{
+				"otherAttributes": {
+					
+				},
+				"href": "https://build-virtual-machine/api/admin/edgeGateway/d52543f4-9faf-4eab-a654-8c8e5fef2ac4/action/upgradeConfig",
+				"id": null,
+				"name": null,
+				"type": null,
+				"rel": "edgeGateway:upgrade",
+				"vcloudExtension": []
+			}
+		],
+		"href": "https://build-virtual-machine/api/admin/edgeGateway/d52543f4-9faf-4eab-a654-8c8e5fef2ac4",
+		"type": "application/vnd.vmware.admin.edgeGateway+xml",
+		"id": "urn:vcloud:gateway:d52543f4-9faf-4eab-a654-8c8e5fef2ac4",
+		"operationKey": null,
+		"description": "",
+		"tasks": null,
+		"name": "gateway_1",
+		"gatewayBackingRef": {
+			"gatewayId": "edge-7",
+			"vcref": {
+				"otherAttributes": {
+					
+				},
+				"id": "51c3d6fd-acda-40b9-a356-8e7a4a8bfd50",
+				"name": "",
+				"type": "com.vmware.vcloud.entity.vimserver",
+				"vcloudExtension": []
+			}
+		},
+		"configuration": {
+			"otherAttributes": {
+				
+			},
+			"backwardCompatibilityMode": null,
+			"gatewayBackingConfig": "compact",
+			"gatewayInterfaces": {
+				"otherAttributes": {
+					
+				},
+				"gatewayInterface": [
+					{
+						"otherAttributes": {
+							
+						},
+						"name": "external_network",
+						"displayName": "external_network",
+						"network": {
+							"otherAttributes": {
+								
+							},
+							"href": "https://build-virtual-machine/api/admin/network/b9ad3587-289f-4395-984e-6c5d879ba69e",
+							"id": null,
+							"name": "external_network",
+							"type": "application/vnd.vmware.admin.network+xml",
+							"vcloudExtension": []
+						},
+						"interfaceType": "uplink",
+						"subnetParticipation": [
+							{
+								"otherAttributes": {
+									
+								},
+								"gateway": "192.168.100.1",
+								"netmask": "255.255.255.0",
+								"ipAddress": "192.168.100.100",
+								"ipRanges": {
+									"otherAttributes": {
+										
+									},
+									"ipRange": [
+										{
+											"otherAttributes": {
+												
+											},
+											"startAddress": "192.168.100.100",
+											"endAddress": "192.168.100.100",
+											"vcloudExtension": []
+										}
+									],
+									"vcloudExtension": []
+								},
+								"vcloudExtension": []
+							}
+						],
+						"applyRateLimit": false,
+						"inRateLimit": 100,
+						"outRateLimit": 100,
+						"useForDefaultRoute": true,
+						"vcloudExtension": []
+					},
+					{
+						"otherAttributes": {
+							
+						},
+						"name": "gateway_1_routed_network",
+						"displayName": "gateway_1_routed_network",
+						"network": {
+							"otherAttributes": {
+								
+							},
+							"href": "https://build-virtual-machine/api/admin/network/e3e22818-e04a-4176-a852-1944474915c9",
+							"id": null,
+							"name": "gateway_1_routed_network",
+							"type": "application/vnd.vmware.admin.network+xml",
+							"vcloudExtension": []
+						},
+						"interfaceType": "internal",
+						"subnetParticipation": [
+							{
+								"otherAttributes": {
+									
+								},
+								"gateway": "192.168.150.1",
+								"netmask": "255.255.255.0",
+								"ipAddress": "192.168.150.1",
+								"ipRanges": null,
+								"vcloudExtension": []
+							}
+						],
+						"applyRateLimit": false,
+						"inRateLimit": null,
+						"outRateLimit": null,
+						"useForDefaultRoute": false,
+						"vcloudExtension": []
+					},
+					{
+						"otherAttributes": {
+							
+						},
+						"name": "routed_network_gateway1",
+						"displayName": "routed_network_gateway1",
+						"network": {
+							"otherAttributes": {
+								
+							},
+							"href": "https://build-virtual-machine/api/admin/network/f53c1a3e-1b52-463e-9418-62133fd2a9d0",
+							"id": null,
+							"name": "routed_network_gateway1",
+							"type": "application/vnd.vmware.admin.network+xml",
+							"vcloudExtension": []
+						},
+						"interfaceType": "internal",
+						"subnetParticipation": [
+							{
+								"otherAttributes": {
+									
+								},
+								"gateway": "192.168.200.1",
+								"netmask": "255.255.255.0",
+								"ipAddress": "192.168.200.1",
+								"ipRanges": null,
+								"vcloudExtension": []
+							}
+						],
+						"applyRateLimit": false,
+						"inRateLimit": null,
+						"outRateLimit": null,
+						"useForDefaultRoute": false,
+						"vcloudExtension": []
+					}
+				],
+				"vcloudExtension": []
+			},
+			"edgeGatewayServiceConfiguration": {
+				"otherAttributes": {
+					
+				},
+				"networkService": [
+					{
+						"name": "{http://www.vmware.com/vcloud/v1.5}GatewayDhcpService",
+						"declaredType": "com.vmware.vcloud.api.rest.schema_v1_5.GatewayDhcpServiceType",
+						"scope": "javax.xml.bind.JAXBElement$GlobalScope",
+						"value": {
+							"otherAttributes": {
+								
+							},
+							"isEnabled": false,
+							"pool": [
+								{
+									"otherAttributes": {
+										
+									},
+									"isEnabled": true,
+									"network": {
+										"otherAttributes": {
+											
+										},
+										"href": "https://build-virtual-machine/api/admin/network/e3e22818-e04a-4176-a852-1944474915c9",
+										"id": null,
+										"name": "gateway_1_routed_network",
+										"type": "application/vnd.vmware.vcloud.orgVdcNetwork+xml",
+										"vcloudExtension": []
+									},
+									"defaultLeaseTime": 3600,
+									"maxLeaseTime": 7200,
+									"lowIpAddress": "192.168.150.115",
+									"highIpAddress": "192.168.150.115",
+									"vcloudExtension": []
+								},
+								{
+									"otherAttributes": {
+										
+									},
+									"isEnabled": true,
+									"network": {
+										"otherAttributes": {
+											
+										},
+										"href": "https://build-virtual-machine/api/admin/network/f53c1a3e-1b52-463e-9418-62133fd2a9d0",
+										"id": null,
+										"name": "routed_network_gateway1",
+										"type": "application/vnd.vmware.vcloud.orgVdcNetwork+xml",
+										"vcloudExtension": []
+									},
+									"defaultLeaseTime": 3600,
+									"maxLeaseTime": 7200,
+									"lowIpAddress": "192.168.200.105",
+									"highIpAddress": "192.168.200.105",
+									"vcloudExtension": []
+								}
+							],
+							"vcloudExtension": []
+						},
+						"nil": false,
+						"globalScope": true,
+						"typeSubstituted": false
+					},
+					{
+						"name": "{http://www.vmware.com/vcloud/v1.5}FirewallService",
+						"declaredType": "com.vmware.vcloud.api.rest.schema_v1_5.FirewallServiceType",
+						"scope": "javax.xml.bind.JAXBElement$GlobalScope",
+						"value": {
+							"otherAttributes": {
+								
+							},
+							"isEnabled": true,
+							"defaultAction": "drop",
+							"logDefaultAction": false,
+							"firewallRule": [
+								{
+									"otherAttributes": {
+										
+									},
+									"id": "1",
+									"isEnabled": false,
+									"matchOnTranslate": false,
+									"description": "Firewall Description",
+									"policy": "allow",
+									"protocols": {
+										"tcp": null,
+										"udp": true,
+										"icmp": null,
+										"any": null,
+										"other": null
+									},
+									"icmpSubType": null,
+									"port": -1,
+									"destinationPortRange": "Any",
+									"destinationIp": "1.1.1.1",
+									"destinationVm": null,
+									"sourcePort": -1,
+									"sourcePortRange": "Any",
+									"sourceIp": "1.1.1.1",
+									"sourceVm": null,
+									"direction": null,
+									"enableLogging": true,
+									"vcloudExtension": []
+								},
+								{
+									"otherAttributes": {
+										
+									},
+									"id": "2",
+									"isEnabled": false,
+									"matchOnTranslate": false,
+									"description": "Firewall Description1",
+									"policy": "allow",
+									"protocols": {
+										"tcp": null,
+										"udp": true,
+										"icmp": null,
+										"any": null,
+										"other": null
+									},
+									"icmpSubType": null,
+									"port": -1,
+									"destinationPortRange": "Any",
+									"destinationIp": "2.2.2.2",
+									"destinationVm": null,
+									"sourcePort": -1,
+									"sourcePortRange": "Any",
+									"sourceIp": "2.2.2.2",
+									"sourceVm": null,
+									"direction": null,
+									"enableLogging": true,
+									"vcloudExtension": []
+								}
+							],
+							"vcloudExtension": []
+						},
+						"nil": false,
+						"globalScope": true,
+						"typeSubstituted": false
+					},
+					{
+						"name": "{http://www.vmware.com/vcloud/v1.5}NatService",
+						"declaredType": "com.vmware.vcloud.api.rest.schema_v1_5.NatServiceType",
+						"scope": "javax.xml.bind.JAXBElement$GlobalScope",
+						"value": {
+							"otherAttributes": {
+								
+							},
+							"isEnabled": true,
+							"natType": null,
+							"policy": null,
+							"natRule": [
+								{
+									"otherAttributes": {
+										
+									},
+									"description": "DNAT Description 1",
+									"ruleType": "DNAT",
+									"isEnabled": false,
+									"id": 65538,
+									"gatewayNatRule": {
+										"otherAttributes": {
+											
+										},
+										"originalIp": "192.168.100.100",
+										"originalPort": "any",
+										"translatedIp": "1.1.1.1",
+										"translatedPort": "any",
+										"protocol": "tcp",
+										"icmpSubType": null,
+										"interface": {
+											"otherAttributes": {
+												
+											},
+											"href": "https://build-virtual-machine/api/admin/network/b9ad3587-289f-4395-984e-6c5d879ba69e",
+											"id": null,
+											"name": "external_network",
+											"type": "application/vnd.vmware.admin.network+xml",
+											"vcloudExtension": []
+										},
+										"vcloudExtension": []
+									},
+									"oneToOneBasicRule": null,
+									"oneToOneVmRule": null,
+									"portForwardingRule": null,
+									"vmRule": null,
+									"vcloudExtension": []
+								},
+								{
+									"otherAttributes": {
+										
+									},
+									"description": "SNAT Description 2",
+									"ruleType": "SNAT",
+									"isEnabled": false,
+									"id": 65538,
+									"gatewayNatRule": {
+										"otherAttributes": {
+											
+										},
+										"originalIp": "192.168.100.120",
+										"originalPort": "any",
+										"translatedIp": "1.1.1.2",
+										"translatedPort": "any",
+										"protocol": "tcp",
+										"icmpSubType": null,
+										"interface": {
+											"otherAttributes": {
+												
+											},
+											"href": "https://build-virtual-machine/api/admin/network/b9ad3587-289f-4395-984e-6c5d879ba69e",
+											"id": null,
+											"name": "external_network",
+											"type": "application/vnd.vmware.admin.network+xml",
+											"vcloudExtension": []
+										},
+										"vcloudExtension": []
+									},
+									"oneToOneBasicRule": null,
+									"oneToOneVmRule": null,
+									"portForwardingRule": null,
+									"vmRule": null,
+									"vcloudExtension": []
+								}
+							],
+							"externalIp": null,
+							"vcloudExtension": []
+						},
+						"nil": false,
+						"globalScope": true,
+						"typeSubstituted": false
+					},
+					{
+						"name": "{http://www.vmware.com/vcloud/v1.5}GatewayIpsecVpnService",
+						"declaredType": "com.vmware.vcloud.api.rest.schema_v1_5.GatewayIpsecVpnServiceType",
+						"scope": "javax.xml.bind.JAXBElement$GlobalScope",
+						"value": {
+							"otherAttributes": {
+								
+							},
+							"isEnabled": true,
+							"endpoint": [],
+							"tunnel": [
+								{
+									"otherAttributes": {
+										
+									},
+									"name": "VPN new",
+									"description": "Modified",
+									"ipsecVpnPeer": {
+										"name": "{http://www.vmware.com/vcloud/v1.5}IpsecVpnThirdPartyPeer",
+										"declaredType": "com.vmware.vcloud.api.rest.schema_v1_5.IpsecVpnThirdPartyPeerType",
+										"scope": "javax.xml.bind.JAXBElement$GlobalScope",
+										"value": {
+											"otherAttributes": {
+												
+											},
+											"peerId": "192.168.105.100",
+											"vcloudExtension": []
+										},
+										"nil": false,
+										"globalScope": true,
+										"typeSubstituted": false
+									},
+									"peerIpAddress": "192.168.105.100",
+									"peerId": "192.168.105.100",
+									"localIpAddress": "192.168.100.100",
+									"localId": "192.168.100.100",
+									"localSubnet": [
+										{
+											"otherAttributes": {
+												
+											},
+											"name": "gateway_1_routed_network",
+											"gateway": "192.168.150.1",
+											"netmask": "255.255.255.0",
+											"vcloudExtension": []
+										}
+									],
+									"peerSubnet": [
+										{
+											"otherAttributes": {
+												
+											},
+											"name": "192.168.169.10/24",
+											"gateway": "192.168.169.10",
+											"netmask": "255.255.255.0",
+											"vcloudExtension": []
+										}
+									],
+									"sharedSecret": "7bLbtYmk8qLqU3fwHmkyhx4P38359S3nqbkdXkdtK5Dth3kxF6f4oP54J56QmTVi",
+									"sharedSecretEncrypted": false,
+									"encryptionProtocol": "AES256",
+									"mtu": 1500,
+									"isEnabled": true,
+									"isOperational": false,
+									"errorDetails": null,
+									"vcloudExtension": []
+								},
+								{
+									"otherAttributes": {
+										
+									},
+									"name": "asdfa",
+									"description": "asdf",
+									"ipsecVpnPeer": {
+										"name": "{http://www.vmware.com/vcloud/v1.5}IpsecVpnThirdPartyPeer",
+										"declaredType": "com.vmware.vcloud.api.rest.schema_v1_5.IpsecVpnThirdPartyPeerType",
+										"scope": "javax.xml.bind.JAXBElement$GlobalScope",
+										"value": {
+											"otherAttributes": {
+												
+											},
+											"peerId": "168",
+											"vcloudExtension": []
+										},
+										"nil": false,
+										"globalScope": true,
+										"typeSubstituted": false
+									},
+									"peerIpAddress": "192.168.100.102",
+									"peerId": "168",
+									"localIpAddress": "192.168.100.100",
+									"localId": "192",
+									"localSubnet": [
+										{
+											"otherAttributes": {
+												
+											},
+											"name": "routed_network_gateway1",
+											"gateway": "192.168.200.1",
+											"netmask": "255.255.255.0",
+											"vcloudExtension": []
+										}
+									],
+									"peerSubnet": [
+										{
+											"otherAttributes": {
+												
+											},
+											"name": "192.168.100.109/32",
+											"gateway": "192.168.100.109",
+											"netmask": "255.255.255.255",
+											"vcloudExtension": []
+										}
+									],
+									"sharedSecret": "D6tkY44B7j2B54U9WkNuHzQ8bKujqe46xe8tSy54Ly2oPe88ideCwSg6fbviJG3n",
+									"sharedSecretEncrypted": false,
+									"encryptionProtocol": "AES256",
+									"mtu": 1500,
+									"isEnabled": true,
+									"isOperational": false,
+									"errorDetails": null,
+									"vcloudExtension": []
+								}
+							],
+							"vcloudExtension": []
+						},
+						"nil": false,
+						"globalScope": true,
+						"typeSubstituted": false
+					},
+					{
+						"name": "{http://www.vmware.com/vcloud/v1.5}StaticRoutingService",
+						"declaredType": "com.vmware.vcloud.api.rest.schema_v1_5.StaticRoutingServiceType",
+						"scope": "javax.xml.bind.JAXBElement$GlobalScope",
+						"value": {
+							"otherAttributes": {
+								
+							},
+							"isEnabled": false,
+							"staticRoute": [],
+							"vcloudExtension": []
+						},
+						"nil": false,
+						"globalScope": true,
+						"typeSubstituted": false
+					},
+					{
+						"name": "{http://www.vmware.com/vcloud/v1.5}LoadBalancerService",
+						"declaredType": "com.vmware.vcloud.api.rest.schema_v1_5.LoadBalancerServiceType",
+						"scope": "javax.xml.bind.JAXBElement$GlobalScope",
+						"value": {
+							"otherAttributes": {
+								
+							},
+							"isEnabled": false,
+							"pool": [
+								{
+									"otherAttributes": {
+										
+									},
+									"id": null,
+									"name": "Test LB Modified",
+									"description": "Modifiedasdf",
+									"servicePort": [
+										{
+											"otherAttributes": {
+												
+											},
+											"isEnabled": true,
+											"protocol": "HTTP",
+											"algorithm": "ROUND_ROBIN",
+											"port": "80",
+											"healthCheckPort": "7777",
+											"healthCheck": [
+												{
+													"otherAttributes": {
+														
+													},
+													"mode": "HTTP",
+													"uri": "/xyz",
+													"healthThreshold": "2",
+													"unhealthThreshold": "3",
+													"interval": "5",
+													"timeout": "15",
+													"vcloudExtension": []
+												}
+											],
+											"vcloudExtension": []
+										},
+										{
+											"otherAttributes": {
+												
+											},
+											"isEnabled": true,
+											"protocol": "HTTPS",
+											"algorithm": "ROUND_ROBIN",
+											"port": "443",
+											"healthCheckPort": "5555",
+											"healthCheck": [
+												{
+													"otherAttributes": {
+														
+													},
+													"mode": "SSL",
+													"uri": null,
+													"healthThreshold": "2",
+													"unhealthThreshold": "3",
+													"interval": "5",
+													"timeout": "15",
+													"vcloudExtension": []
+												}
+											],
+											"vcloudExtension": []
+										},
+										{
+											"otherAttributes": {
+												
+											},
+											"isEnabled": false,
+											"protocol": "TCP",
+											"algorithm": "ROUND_ROBIN",
+											"port": "",
+											"healthCheckPort": "",
+											"healthCheck": [
+												{
+													"otherAttributes": {
+														
+													},
+													"mode": "TCP",
+													"uri": null,
+													"healthThreshold": "2",
+													"unhealthThreshold": "3",
+													"interval": "5",
+													"timeout": "15",
+													"vcloudExtension": []
+												}
+											],
+											"vcloudExtension": []
+										}
+									],
+									"member": [
+										{
+											"otherAttributes": {
+												
+											},
+											"ipAddress": "192.168.100.100",
+											"weight": "1",
+											"servicePort": [
+												{
+													"otherAttributes": {
+														
+													},
+													"isEnabled": null,
+													"protocol": "HTTP",
+													"algorithm": null,
+													"port": "80",
+													"healthCheckPort": "5555",
+													"healthCheck": [],
+													"vcloudExtension": []
+												},
+												{
+													"otherAttributes": {
+														
+													},
+													"isEnabled": null,
+													"protocol": "HTTPS",
+													"algorithm": null,
+													"port": "",
+													"healthCheckPort": "",
+													"healthCheck": [],
+													"vcloudExtension": []
+												},
+												{
+													"otherAttributes": {
+														
+													},
+													"isEnabled": null,
+													"protocol": "TCP",
+													"algorithm": null,
+													"port": "",
+													"healthCheckPort": "",
+													"healthCheck": [],
+													"vcloudExtension": []
+												}
+											],
+											"vcloudExtension": []
+										}
+									],
+									"operational": false,
+									"errorDetails": null,
+									"vcloudExtension": []
+								}
+							],
+							"virtualServer": [
+								{
+									"otherAttributes": {
+										
+									},
+									"isEnabled": true,
+									"name": "LB Test",
+									"description": "LB Test",
+									"ipAddress": "192.168.100.100",
+									"serviceProfile": [
+										{
+											"otherAttributes": {
+												
+											},
+											"isEnabled": true,
+											"protocol": "HTTP",
+											"port": "80",
+											"persistence": {
+												"otherAttributes": {
+													
+												},
+												"method": "",
+												"cookieName": null,
+												"cookieMode": null,
+												"vcloudExtension": []
+											},
+											"vcloudExtension": []
+										},
+										{
+											"otherAttributes": {
+												
+											},
+											"isEnabled": false,
+											"protocol": "HTTPS",
+											"port": "443",
+											"persistence": {
+												"otherAttributes": {
+													
+												},
+												"method": "SSL_SESSION_ID",
+												"cookieName": null,
+												"cookieMode": null,
+												"vcloudExtension": []
+											},
+											"vcloudExtension": []
+										},
+										{
+											"otherAttributes": {
+												
+											},
+											"isEnabled": false,
+											"protocol": "TCP",
+											"port": "",
+											"persistence": {
+												"otherAttributes": {
+													
+												},
+												"method": "",
+												"cookieName": null,
+												"cookieMode": null,
+												"vcloudExtension": []
+											},
+											"vcloudExtension": []
+										}
+									],
+									"logging": false,
+									"pool": "Test LB Modified",
+									"loadBalancerTemplates": [],
+									"interface": {
+										"otherAttributes": {
+											
+										},
+										"href": "https://build-virtual-machine/api/admin/network/b9ad3587-289f-4395-984e-6c5d879ba69e",
+										"id": null,
+										"name": "external_network",
+										"type": "application/vnd.vmware.vcloud.orgVdcNetwork+xml",
+										"vcloudExtension": []
+									},
+									"vcloudExtension": []
+								}
+							],
+							"vcloudExtension": []
+						},
+						"nil": false,
+						"globalScope": true,
+						"typeSubstituted": false
+					}
+				],
+				"vcloudExtension": []
+			},
+			"haEnabled": false,
+			"useDefaultRouteForDnsRelay": false,
+			"syslogServerSettings": {
+				"otherAttributes": {
+					
+				},
+				"tenantSyslogServerSettings": {
+					"syslogServerIp": []
+				},
+				"vcloudExtension": []
+			},
+			"advancedNetworkingEnabled": false,
+			"vcloudExtension": []
+		},
+		"status": 1,
+		"vcloudExtension": []
+	},
+	"edgeUserName": null,
+	"edgePassword": null,
+	"metaData": null,
+	"edgeAdvanced": false,
+	"haEnabled": false
+}

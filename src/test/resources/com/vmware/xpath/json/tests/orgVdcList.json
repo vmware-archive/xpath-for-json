@@ -1,0 +1,94 @@
+{
+	"id": "1000",
+	"clouds": [
+		{
+			"id": "cld-1000-1",
+			"name": "cld-1000-1",
+			"vcloud": {
+				"id": "vcd-1000-1",
+				"name": "vcd-1000-1"
+			},
+			"status": "Active",
+			"orgVdcs": [
+				{
+					"id": "orgVdc-1000-1-01",
+					"aresId": "orgVdc-1000-1-01",
+					"name": "orgVdc-1000-1-01",
+					"orgId": "",
+					"orgName": "OrgName-1000-A",
+					"status": "Active"
+				},
+				{
+					"id": "orgVdc-1000-1-02",
+					"aresId": "orgVdc-1000-1-02",
+					"name": "orgVdc-1000-1-02",
+					"orgId": "",
+					"orgName": "OrgName-1000-B",
+					"status": "Active"
+				},
+				{
+					"id": "orgVdc-1000-1-03",
+					"aresId": "orgVdc-1000-1-03",
+					"name": "orgVdc-1000-1-03",
+					"orgId": "",
+					"orgName": "OrgName-1000-C",
+					"status": "Inactive"
+				},
+				{
+					"id": "orgVdc-1000-1-04",
+					"aresId": "orgVdc-1000-1-04",
+					"name": "orgVdc-1000-1-04",
+					"orgId": "",
+					"orgName": "OrgName-1000-B",
+					"status": "Active"
+				}
+			]
+		},
+		{
+			"id": "cld-1000-2",
+			"name": "cld-1000-2",
+			"vcloud": {
+				"id": "vcd-1000-2",
+				"name": "vcd-1000-2"
+			},
+			"status": "Active",
+			"orgVdcs": [
+				{
+					"id": "orgVdc-1000-2-01",
+					"aresId": "orgVdc-1000-2-01",
+					"name": "orgVdc-1000-2-01",
+					"orgId": "",
+					"orgName": "OrgName-1000-X",
+					"status": "Active"
+				},
+				{
+					"id": "orgVdc-1000-2-02",
+					"aresId": "orgVdc-1000-2-02",
+					"name": "orgVdc-1000-2-02",
+					"orgId": "",
+					"orgName": "OrgName-1000-Y",
+					"status": "Active"
+				},
+				{
+					"id": "orgVdc-1000-2-03",
+					"aresId": "orgVdc-1000-2-03",
+					"name": "orgVdc-1000-2-03",
+					"orgId": "",
+					"orgName": "OrgName-1000-X",
+					"status": "Active"
+				},
+				{
+					"id": "orgVdc-1000-2-04",
+					"aresId": "orgVdc-1000-2-04",
+					"name": "orgVdc-1000-2-04",
+					"orgId": "",
+					"orgName": "OrgName-1000-X",
+					"status": "Inactive"
+				}
+			]
+		}
+	],
+	"name": "company-1",
+	"eaId": "",
+	"state": "Active"
+}

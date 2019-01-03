@@ -1,0 +1,483 @@
+{
+	"metadata": {
+		"interface_0": {
+			"oldValue": "vNic_0",
+			"type": "interface",
+			"scope": "virtualwire-34",
+			"userInputNeeded": true,
+			"ipAddresses": "244.244.244.1,244.244.244.2,244.244.244.3,244.244.244.4\/22"
+		},
+		"interface_1": {
+			"oldValue": "vNic_1",
+			"type": "interface",
+			"scope": "virtualwire-33",
+			"userInputNeeded": true,
+			"ipAddresses": "41.41.41.1,41.41.41.2,41.41.41.3\/24"
+		},
+		"ipset_0": {
+			"oldValue": "ipset-19",
+			"type": "ipset",
+			"scope": "edge"
+		},
+		"ipset_1": {
+			"oldValue": "ipset-18",
+			"type": "ipset",
+			"scope": "edge"
+		},
+		"ipset_2": {
+			"oldValue": "ipset-17",
+			"type": "ipset",
+			"scope": "globalroot-0"
+		},
+		"ip_0": {
+			"oldValue": "244.244.244.2",
+			"type": "ip",
+			"scope": "$interface_0",
+			"oldSubnet": "244.244.244.1,244.244.244.2,244.244.244.3,244.244.244.4\/22",
+			"subnetIndex": 0,
+			"ipIndex": 1,
+			"subnetPrefixLength": "22"
+		},
+		"ip_1": {
+			"oldValue": "244.244.244.1",
+			"type": "ip",
+			"scope": "$interface_0",
+			"oldSubnet": "244.244.244.1,244.244.244.2,244.244.244.3,244.244.244.4\/22",
+			"subnetIndex": 0,
+			"ipIndex": 0,
+			"subnetPrefixLength": "22"
+		},
+		"ip_2": {
+			"oldValue": "41.41.41.1",
+			"type": "ip",
+			"scope": "$interface_1",
+			"oldSubnet": "41.41.41.1,41.41.41.2,41.41.41.3\/24",
+			"subnetIndex": 0,
+			"ipIndex": 0,
+			"subnetPrefixLength": "24"
+		},
+		"ip_3": {
+			"oldValue": "41.41.41.3",
+			"type": "ip",
+			"scope": "$interface_1",
+			"oldSubnet": "41.41.41.1,41.41.41.2,41.41.41.3\/24",
+			"subnetIndex": 0,
+			"ipIndex": 2,
+			"subnetPrefixLength": "24"
+		},
+		"ip_4": {
+			"oldValue": "99.99.99.99",
+			"type": "ip",
+			"scope": "external",
+			"userInputNeeded": true
+		},
+		"ip_5": {
+			"oldValue": "190.0.0.1",
+			"type": "ip",
+			"scope": "external",
+			"userInputNeeded": true
+		}
+	},
+	"templates": [
+		{
+			"type": "interface",
+			"payload": {
+				"label": "$interface_0",
+				"name": "virtualwire-34",
+				"addressGroups": {
+					"addressGroups": [
+						{
+							"primaryAddress": "244.244.244.1",
+							"secondaryAddresses": {
+								"type": "secondary_addresses",
+								"ipAddress": [
+									"244.244.244.2",
+									"244.244.244.3",
+									"244.244.244.4"
+								]
+							},
+							"subnetMask": "255.255.252.0",
+							"subnetPrefixLength": "22"
+						}
+					]
+				},
+				"mtu": 1500,
+				"type": "internal",
+				"isConnected": true,
+				"index": 0,
+				"portgroupId": "virtualwire-34",
+				"portgroupName": "Txn_Hdmz_244_244_244_1",
+				"fenceParameters": [],
+				"enableProxyArp": false,
+				"enableSendRedirects": false
+			},
+			"scope": "virtualwire-34",
+			"objectId": "vNic_0",
+			"userInputNeeded": true
+		},
+		{
+			"type": "interface",
+			"payload": {
+				"label": "$interface_1",
+				"name": "virtualwire-33",
+				"addressGroups": {
+					"addressGroups": [
+						{
+							"primaryAddress": "41.41.41.1",
+							"secondaryAddresses": {
+								"type": "secondary_addresses",
+								"ipAddress": [
+									"41.41.41.2",
+									"41.41.41.3"
+								]
+							},
+							"subnetMask": "255.255.255.0",
+							"subnetPrefixLength": "24"
+						}
+					]
+				},
+				"mtu": 1500,
+				"type": "uplink",
+				"isConnected": true,
+				"index": 1,
+				"portgroupId": "virtualwire-33",
+				"portgroupName": "Txn_Hdmz_41_41_41_1",
+				"fenceParameters": [],
+				"enableProxyArp": false,
+				"enableSendRedirects": false
+			},
+			"scope": "virtualwire-33",
+			"objectId": "vNic_1",
+			"userInputNeeded": true
+		},
+		{
+			"type": "ipset",
+			"payload": {
+				"objectId": "$ipset_0",
+				"objectTypeName": "IPSet",
+				"vsmUuid": "42365AF7-EAC6-8393-D874-629811434C06",
+				"revision": 1,
+				"type": {
+					"name": "IPSet"
+				},
+				"name": "Local-Dest-1532493117785",
+				"description": "created by STF",
+				"scope": {
+					"id": "edge-10",
+					"objectTypeName": "Edge",
+					"name": "TestCloudEdge-1532493117785"
+				},
+				"clientHandle": "",
+				"extendedAttributes": [],
+				"isUniversal": false,
+				"universalRevision": 0,
+				"inheritanceAllowed": false,
+				"value": "192.168.128.0\/22,111.111.111.2-111.111.111.250"
+			},
+			"scope": "edge"
+		},
+		{
+			"type": "ipset",
+			"payload": {
+				"objectId": "$ipset_1",
+				"objectTypeName": "IPSet",
+				"vsmUuid": "42365AF7-EAC6-8393-D874-629811434C06",
+				"revision": 1,
+				"type": {
+					"name": "IPSet"
+				},
+				"name": "Local-Src-1532493117785",
+				"description": "created by STF",
+				"scope": {
+					"id": "edge-10",
+					"objectTypeName": "Edge",
+					"name": "TestCloudEdge-1532493117785"
+				},
+				"clientHandle": "",
+				"extendedAttributes": [],
+				"isUniversal": false,
+				"universalRevision": 0,
+				"inheritanceAllowed": false,
+				"value": "192.168.128.0\/22,111.111.111.2-111.111.111.250"
+			},
+			"scope": "edge"
+		},
+		{
+			"type": "ipset",
+			"payload": {
+				"objectId": "$ipset_2",
+				"objectTypeName": "IPSet",
+				"vsmUuid": "42365AF7-EAC6-8393-D874-629811434C06",
+				"revision": 1,
+				"type": {
+					"name": "IPSet"
+				},
+				"name": "Global-1532493117785",
+				"description": "created by STF",
+				"scope": {
+					"id": "globalroot-0",
+					"objectTypeName": "GlobalRoot",
+					"name": "Global"
+				},
+				"clientHandle": "",
+				"extendedAttributes": [],
+				"isUniversal": false,
+				"universalRevision": 0,
+				"inheritanceAllowed": true,
+				"value": "10.10.10.0\/24,11.11.11.2-11.11.11.250"
+			},
+			"scope": "globalroot-0"
+		},
+		{
+			"type": "ip",
+			"payload": {
+				"ip": "$ip_0"
+			},
+			"objectId": "244.244.244.2",
+			"scope": "$interface_0"
+		},
+		{
+			"type": "ip",
+			"payload": {
+				"ip": "$ip_1"
+			},
+			"objectId": "244.244.244.1",
+			"scope": "$interface_0"
+		},
+		{
+			"type": "ip",
+			"payload": {
+				"ip": "$ip_2"
+			},
+			"objectId": "41.41.41.1",
+			"scope": "$interface_1"
+		},
+		{
+			"type": "ip",
+			"payload": {
+				"ip": "$ip_3"
+			},
+			"objectId": "41.41.41.3",
+			"scope": "$interface_1"
+		},
+		{
+			"type": "firewall",
+			"payload": {
+				"featureType": "firewall_4.0",
+				"version": 2,
+				"enabled": true,
+				"globalConfig": {
+					"tcpPickOngoingConnections": false,
+					"tcpAllowOutOfWindowPackets": false,
+					"tcpSendResetForClosedVsePorts": true,
+					"dropInvalidTraffic": true,
+					"logInvalidTraffic": false,
+					"tcpTimeoutOpen": 30,
+					"tcpTimeoutEstablished": 21600,
+					"tcpTimeoutClose": 30,
+					"udpTimeout": 60,
+					"icmpTimeout": 10,
+					"icmp6Timeout": 10,
+					"ipGenericTimeout": 120,
+					"enableSynFloodProtection": false,
+					"logIcmpErrors": false,
+					"dropIcmpReplays": false
+				},
+				"defaultPolicy": {
+					"action": "accept",
+					"loggingEnabled": true
+				},
+				"firewallRules": {
+					"firewallRules": [
+						{
+							"ruleId": 131074,
+							"ruleTag": 131074,
+							"name": "firewall",
+							"ruleType": "internal_high",
+							"enabled": true,
+							"loggingEnabled": false,
+							"description": "firewall",
+							"action": "accept",
+							"source": {
+								"exclude": false,
+								"ipAddress": [],
+								"groupingObjectId": [],
+								"vnicGroupId": [
+									"vse"
+								]
+							}
+						},
+						{
+							"ruleId": 131075,
+							"ruleTag": 131075,
+							"name": "test1",
+							"ruleType": "user",
+							"enabled": true,
+							"loggingEnabled": false,
+							"description": "",
+							"matchTranslated": false,
+							"action": "accept",
+							"source": {
+								"exclude": false,
+								"ipAddress": [
+									"$ip_0",
+									"$ip_2"
+								],
+								"groupingObjectId": [
+									"$ipset_2",
+									"$ipset_1"
+								],
+								"vnicGroupId": [
+									"vse",
+									"internal",
+									"external",
+									"$interface_0",
+									"$interface_1"
+								]
+							},
+							"destination": {
+								"exclude": false,
+								"ipAddress": [
+									"$ip_3",
+									"$ip_1"
+								],
+								"groupingObjectId": [
+									"$ipset_2",
+									"$ipset_0"
+								],
+								"vnicGroupId": [
+									"$interface_0",
+									"$interface_0"
+								]
+							}
+						},
+						{
+							"ruleId": 131073,
+							"ruleTag": 131073,
+							"name": "default rule for ingress traffic",
+							"ruleType": "default_policy",
+							"enabled": true,
+							"loggingEnabled": true,
+							"description": "default rule for ingress traffic",
+							"action": "accept"
+						}
+					]
+				}
+			},
+			"scope": "edge"
+		},
+		{
+			"type": "ip",
+			"payload": {
+				"ip": "$ip_4"
+			},
+			"objectId": "99.99.99.99",
+			"scope": "external",
+			"userInputNeeded": true
+		},
+		{
+			"type": "ip",
+			"payload": {
+				"ip": "$ip_5"
+			},
+			"objectId": "190.0.0.1",
+			"scope": "external",
+			"userInputNeeded": true
+		},
+		{
+			"type": "nat",
+			"payload": {
+				"featureType": "nat",
+				"version": 2,
+				"enabled": true,
+				"rules": {
+					"natRulesDtos": [
+						{
+							"ruleId": 196609,
+							"ruleTag": 196609,
+							"ruleType": "user",
+							"action": "snat",
+							"snatMatchDestinationAddress": "any",
+							"loggingEnabled": true,
+							"enabled": true,
+							"description": "",
+							"protocol": "any",
+							"originalPort": "any",
+							"translatedPort": "any",
+							"snatMatchDestinationPort": "any",
+							"vnic": "$interface_0",
+							"originalAddress": "$ip_2",
+							"translatedAddress": "$ip_1"
+						},
+						{
+							"ruleId": 196610,
+							"ruleTag": 196610,
+							"ruleType": "user",
+							"action": "snat",
+							"loggingEnabled": false,
+							"enabled": true,
+							"description": "",
+							"protocol": "any",
+							"originalPort": "any",
+							"translatedPort": "any",
+							"snatMatchDestinationPort": "any",
+							"vnic": "$interface_0",
+							"originalAddress": "$ip_4",
+							"translatedAddress": "$ip_4",
+							"snatMatchDestinationAddress": "$ip_4"
+						},
+						{
+							"ruleId": 196611,
+							"ruleTag": 196611,
+							"ruleType": "user",
+							"action": "dnat",
+							"loggingEnabled": false,
+							"enabled": true,
+							"description": "",
+							"protocol": "any",
+							"originalPort": "any",
+							"translatedPort": "any",
+							"dnatMatchSourcePort": "any",
+							"vnic": "$interface_1",
+							"originalAddress": "$ip_2",
+							"translatedAddress": "$ip_3",
+							"dnatMatchSourceAddress": "$ip_0"
+						},
+						{
+							"ruleId": 196612,
+							"ruleTag": 196612,
+							"ruleType": "user",
+							"action": "snat",
+							"loggingEnabled": false,
+							"enabled": true,
+							"description": "",
+							"protocol": "any",
+							"originalPort": "any",
+							"translatedPort": "any",
+							"snatMatchDestinationPort": "any",
+							"originalAddress": "$ip_5",
+							"translatedAddress": "$ip_5",
+							"snatMatchDestinationAddress": "$ip_5"
+						}
+					]
+				}
+			},
+			"scope": "edge"
+		},
+		{
+			"type": "edge",
+			"payload": {
+				"message": "==== edge-10 ===="
+			},
+			"scope": "self"
+		}
+	],
+	"varIndices": {
+		"edge": 0,
+		"interface": 2,
+		"firewall": 0,
+		"ipset": 3,
+		"ip": 6,
+		"nat": 0
+	}
+}
