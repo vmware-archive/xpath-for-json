@@ -10,8 +10,6 @@ This project, however, brings the goodness of good old XPath (that is used over 
 
 ## Try it out
 
-Please see the JUnit cases in TestJsonXpath.java within src/test/java
-
 ### Prerequisites
 
 * Java 8
@@ -23,6 +21,14 @@ Please see the JUnit cases in TestJsonXpath.java within src/test/java
 * mvn clean install
 * mvn test
 
+### Sample Code
+        String xpath = "//your/xpath[filter]"; 
+        JsonNode jn = getJsonNode(yourJsonStr);
+        JsonNode resNode = JsonXpath.find(jn, xpath);
+        LOG.info("{} - {}", xpath, resNode);
+
+Please see the JUnit cases in TestJsonXpath.java within src/test/java
+
 ## Documentation
 
 ### Why
@@ -31,7 +37,7 @@ What the JSONPath "$..groupingObjectId[?(@ =~ /^ipset-[\\d]+$/)]" intends to do 
 
 This project aims at precisely that. The use of . and .. have been associated with a meaning that has been there from ages (and is widespread in FileSystems in various operating systems e.g. Windows, Unix, OSX) and to associate a different meaning to those in a different world makes it awkward to read and interpret (that's what happens with JSONPath, another opensource project). Similarly, the symbol '$' has a meaning in regular expressions, and to use it differently as a path-specifier often makes it non intuitive (the example above). There would be more such examples.
 
-In addition, there are certain issues with JSONPath owing to its redefining of path symbols - "not supporting parent navigation" which is usually specified using a double-dot '..'. There are other limitations with JSONPath (and I believe, those are due to bugs that require fixes) - for instance, " $..groupingObjectId[ ?(@ =~ /^ipset-[\\d]+$/) ][ 0 ]" returns blank, however one would expect it to return the first occurrence in the list of matches.
+In addition, there are certain issues with JSONPath owing to its redefining of path symbols - "not supporting parent navigation" which is usually specified using a double-dot '..'. There are other limitations with JSONPath (and I believe, those are due to bugs that require fixes) - for instance, " $..groupingObjectId[ ?(@ =~ /^ipset-[\\d]+$/) ][ 1 ]" returns blank, however one would expect it to return the first occurrence in the list of matches.
 
 ### What's new here
 Apart from the good old Xpath syntax, there are a few advantages using this project:
