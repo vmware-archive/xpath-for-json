@@ -54,6 +54,10 @@ Refer to the JUnit cases in TestJsonXpath.java for examples for each of those.
 
 The xpath-for-json project team welcomes contributions from the community. Before you start working with xpath-for-json, please read our [Developer Certificate of Origin](https://cla.vmware.com/dco). All contributions to this repository must be signed as described on that page. Your signature certifies that you wrote the patch or have the right to pass it on as an open-source patch. For more detailed information, refer to [CONTRIBUTING.md](CONTRIBUTING.md).
 
+### Next Features
+* A node JS impl to host it as a webpage, in case someone wants to try that through web
+* Xpath for CLI text
+
 ## License
 The Desired State Configuration Resources for VMware is distributed under the BSD-2.
 
