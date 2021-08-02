@@ -66,6 +66,7 @@ import org.slf4j.LoggerFactory;
 
 import com.vmware.xpath.TraversalStopException;
 import com.vmware.xpath.XpathVisitorException;
+import com.vmware.xpath.context.Context;
 import com.vmware.xpath.json.DebugJsonXpathVisitor;
 import com.vmware.xpath.json.DistinctTextValueJsonXpathVisitor;
 import com.vmware.xpath.json.JsonXpath;
@@ -112,7 +113,7 @@ public class TestJsonXpath extends TestCase{
         }
 
         @Override
-        public boolean visit(JsonNode parent, JsonNode currentNodeToSelect)
+        public boolean visit(Context ctx, JsonNode parent, JsonNode currentNodeToSelect)
                 throws XpathVisitorException, TraversalStopException {
             if (parent instanceof ObjectNode) {
                 ObjectNode pNode = (ObjectNode) parent;
@@ -700,7 +701,7 @@ public class TestJsonXpath extends TestCase{
         JsonXpath.findAndUpdateMultiple(jn, "//vcloud", new JsonXpathVisitor()
         {
             @Override
-            public boolean visit(JsonNode parent, JsonNode currentNodeToSelect)
+            public boolean visit(Context ctx, JsonNode parent, JsonNode currentNodeToSelect)
                     throws XpathVisitorException, TraversalStopException
             {
                 JsonNode vcd = currentNodeToSelect;
@@ -735,7 +736,7 @@ public class TestJsonXpath extends TestCase{
         JsonXpath.findAndUpdateMultiple(jn, "//firewallRules/firewallRules", new JsonXpathVisitor()
         {
             @Override
-            public boolean visit(JsonNode parent, JsonNode currentNodeToSelect)
+            public boolean visit(Context ctx, JsonNode parent, JsonNode currentNodeToSelect)
                     throws XpathVisitorException, TraversalStopException
             {
                 // Parent would be the containing JSONArray;
@@ -900,7 +901,7 @@ public class TestJsonXpath extends TestCase{
                 new JsonXpathVisitor() {
 
                     @Override
-                    public boolean visit(JsonNode parent, JsonNode currentNodeToSelect)
+                    public boolean visit(Context ctx, JsonNode parent, JsonNode currentNodeToSelect)
                             throws XpathVisitorException, TraversalStopException {
 
                         ObjectNode md = (ObjectNode) parent;
