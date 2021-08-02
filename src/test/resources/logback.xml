@@ -1,0 +1,38 @@
+<configuration scan="true" scanPeriod="60 seconds">
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/xpath-for-json.log</file>
+
+        <filter class="ch.qos.logback.core.filter.EvaluatorFilter">
+            <evaluator class="ch.qos.logback.classic.boolex.OnMarkerEvaluator">
+                <marker>XPATH_TREE</marker>
+            </evaluator>
+            <OnMatch>ACCEPT</OnMatch>
+            <OnMismatch>DENY</OnMismatch>
+        </filter>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>logs/xpath-for-json.%i.log.gz</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>50</maxIndex>
+        </rollingPolicy>
+
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>10MB</maxFileSize>
+        </triggeringPolicy>
+
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="com.vmware.vca.hybridity.logger.MaskPatternLayout">
+                <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS zzz, UTC} [%marker] [%thread, %X{first}, %X{last}, TxId: %X{transactionId}] %-5level %logger{36}- %msg%n</pattern>
+            </layout>
+        </encoder>
+    </appender>
+
+    <logger name="com.vmware.xpath.json.JsonXpath">
+        <level value="DEBUG" />
+        <appender-ref ref="LOG_FILE_XPATH_FOR_JSON" />
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+    </root>
+</configuration>

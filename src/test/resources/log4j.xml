@@ -1,0 +1,28 @@
+<configuration scan="true" scanPeriod="60 seconds">
+    <appender name="CONSOLE"
+        class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
+        </layout>
+    </appender>
+
+    <appender name="LOG_FILE_XPATH_FOR_JSON"
+        class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="logs/xpath-for-json.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
+        </layout>
+    </appender>
+
+    <logger name="com.vmware.xpath.json.JsonXpath">
+        <level value="DEBUG" />
+        <appender-ref ref="LOG_FILE_XPATH_FOR_JSON" />
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+    </root>
+</configuration>
