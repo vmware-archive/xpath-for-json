@@ -36,6 +36,7 @@ import org.codehaus.jackson.JsonNode;
 
 import com.vmware.xpath.TraversalStopException;
 import com.vmware.xpath.XpathVisitorException;
+import com.vmware.xpath.context.Context;
 
 /**
  * 
@@ -51,7 +52,7 @@ public final class NullJsonFilter implements JsonXpathVisitor
     /**
      * 
      */
-    public boolean visit(JsonNode parent, JsonNode currentNodeToSelect)
+    public boolean visit(Context ctx, JsonNode parent, JsonNode currentNodeToSelect)
             throws XpathVisitorException, TraversalStopException
     {
         // Nothing to be done

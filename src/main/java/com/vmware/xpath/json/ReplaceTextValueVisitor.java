@@ -47,6 +47,7 @@ import org.slf4j.LoggerFactory;
 
 import com.vmware.xpath.TraversalStopException;
 import com.vmware.xpath.XpathVisitorException;
+import com.vmware.xpath.context.Context;
 
 /**
  * @author banerjees
@@ -93,7 +94,7 @@ public final class ReplaceTextValueVisitor implements JsonXpathVisitor
     }
 
     @Override
-    public boolean visit(JsonNode parent, JsonNode currentNodeToSelect)
+    public boolean visit(Context ctx, JsonNode parent, JsonNode currentNodeToSelect)
             throws XpathVisitorException, TraversalStopException
     {
         logger.debug(" ==> Found parent of the node " + parent);

@@ -47,6 +47,7 @@ import org.slf4j.LoggerFactory;
 
 import com.vmware.xpath.TraversalStopException;
 import com.vmware.xpath.XpathVisitorException;
+import com.vmware.xpath.context.Context;
 
 import java.io.IOException;
 import java.util.*;
@@ -171,7 +172,8 @@ public class JsonXpath
 
         return res == null ? MissingNode.getInstance() : res;
     }
-
+    
+    
     /**
      * Traverses the nodes given by the xpath, and lets the visitor modify the source JSON tree.
      *
@@ -181,7 +183,22 @@ public class JsonXpath
      * @return
      */
     public static List<JsonNode> findAndUpdateMultiple( JsonNode tree, String xpath, JsonXpathVisitor visitor ) {
+    	Context ctx = Context.create(xpath);
+    	return findAndUpdateMultiple(ctx, tree, xpath, visitor);
+    }
+
+    /**
+     * Traverses the nodes given by the xpath, and lets the visitor modify the source JSON tree.
+     *
+     * @param tree
+     * @param xpath
+     * @param visitor
+     * @return
+     */
+    public static List<JsonNode> findAndUpdateMultiple( Context ctx, JsonNode tree, String xpath, JsonXpathVisitor visitor ) {
         LOG.debug( "XPath: {}", xpath );
+        ctx.set("_xpath", xpath);
+        ctx.set("_curr", tree);
         List<JsonNode> ret = new ArrayList<JsonNode>();
 
         if ( xpath == null || xpath.isEmpty() || xpath.equals( "/" ) || xpath.equals( "//" ) )
@@ -204,7 +221,7 @@ public class JsonXpath
          * unary path
          */
         if ( xpath.indexOf( '/' ) == -1 )
-            return singular ? getSingularDepthValues( tree, xpath, visitor ) : getMultipleDepthValues( tree, xpath, visitor );
+            return singular ? getSingularDepthValues( ctx, tree, xpath, visitor ) : getMultipleDepthValues( ctx, tree, xpath, visitor );
 
         /*
          * form: XPATH = <HEAD> / <CONS>
@@ -213,28 +230,41 @@ public class JsonXpath
          */
         String head = xpath.substring( 0, xpath.indexOf( '/' ) );
         String cons = xpath.substring( xpath.indexOf( '/' ) );
+        
+        
 
-        if ( head.isEmpty() )
-            return findAndUpdateMultiple( tree, cons, visitor );
+        if ( head.isEmpty() ) {
+        	Context child = ctx.createSubContext(head);
+        	LOG.debug("---->>> CREATING CHILD CONTEXT [LAST] <<<----");
+			return findAndUpdateMultiple( child, tree, cons, visitor );
+		}
 
+        /*
+         *  Some calculations done here - but that should not be 'visited';
+         *  hence DebugJsonXpathVisitor.
+         */
         List<JsonNode> breadthList =
-            singular ? getSingularDepthValues( tree, head, new DebugJsonXpathVisitor( xpath, false ) ) : getMultipleDepthValues( tree, head, new DebugJsonXpathVisitor( xpath, false ) );
+            singular ? getSingularDepthValues( ctx, tree, head, new DebugJsonXpathVisitor( xpath, false ) ) : 
+            	getMultipleDepthValues( ctx, tree, head, new DebugJsonXpathVisitor( xpath, false ) );
 
         for ( JsonNode currentNode : breadthList ) {
             LOG.debug( "BREADTH LIST: {}", currentNode );
-            ret.addAll( findAndUpdateMultiple( currentNode, cons, visitor ) );
+            Context child = ctx.createSubContext(head);
+            LOG.debug("---->>> CREATING CHILD CONTEXT <<<----");
+            ret.addAll( findAndUpdateMultiple( child, currentNode, cons, visitor ) );
         }
 
         return ret;
     }
 
     /**
+     * @param ctx TODO
      * @param tree
      * @param xpath
      * @param visitor
      * @return
      */
-    private static List<JsonNode> getMultipleDepthValues( JsonNode tree, String xpath, JsonXpathVisitor visitor ) {
+    private static List<JsonNode> getMultipleDepthValues( Context ctx, JsonNode tree, String xpath, JsonXpathVisitor visitor ) {
         List<JsonNode> filteredNodes = new ArrayList<>();
         List<Pair<JsonNode, JsonNode>> traverseMap = new ArrayList<>();
         String filterExprStr = "";
@@ -318,7 +348,7 @@ public class JsonXpath
 
         for ( Pair<JsonNode, JsonNode> pairs : traverseMap ) {
             try {
-                visitor.visit( pairs.k, pairs.t );
+                visitor.visit(ctx, pairs.k, pairs.t );
             } catch ( XpathVisitorException e ) {
                 continue;
             } catch ( TraversalStopException e ) {
@@ -330,22 +360,23 @@ public class JsonXpath
     }
 
     /**
+     * @param ctx TODO
      * @param tree
      * @param xpath
      * @param visitor
      * @return
      */
-    private static List<JsonNode> getSingularDepthValues( JsonNode tree, String xpath, JsonXpathVisitor visitor ) {
+    private static List<JsonNode> getSingularDepthValues( Context ctx, JsonNode tree, String xpath, JsonXpathVisitor visitor ) {
         List<JsonNode> ret = new ArrayList<JsonNode>();
 
         if ( tree instanceof ObjectNode )
-            return findSingularDepthValuesOnObjectNode( tree, xpath, visitor );
+            return findSingularDepthValuesOnObjectNode( ctx, tree, xpath, visitor );
 
         if ( tree instanceof ArrayNode ) {
             Iterator<JsonNode> itr = ( (ArrayNode) tree ).getElements();
             while ( itr.hasNext() ) {
                 JsonNode elm = itr.next();
-                ret.addAll( findSingularDepthValuesOnObjectNode( elm, xpath, visitor ) );
+                ret.addAll( findSingularDepthValuesOnObjectNode( ctx, elm, xpath, visitor ) );
             }
         }
 
@@ -353,12 +384,13 @@ public class JsonXpath
     }
 
     /**
+     * @param ctx TODO
      * @param tree
      * @param xpath
      * @param visitor
      * @return
      */
-    private static List<JsonNode> findSingularDepthValuesOnObjectNode( JsonNode tree, String xpath, JsonXpathVisitor visitor ) {
+    private static List<JsonNode> findSingularDepthValuesOnObjectNode( Context ctx, JsonNode tree, String xpath, JsonXpathVisitor visitor ) {
         List<JsonNode> ret = new ArrayList<JsonNode>();
 
         if ( !( tree instanceof ObjectNode ) )
@@ -467,7 +499,7 @@ public class JsonXpath
         for ( Entry<JsonNode, List<JsonNode>> entries : traverseMap.entrySet() )
             for ( JsonNode entry : entries.getValue() ) {
                 try {
-                    visitor.visit( entries.getKey(), entry );
+                    visitor.visit( ctx, entries.getKey(), entry );
                 } catch ( XpathVisitorException e ) {
                     LOG.warn( "Skipping incorrect handler exception: {}", e.getMessage() );
                     LOG.debug( "Skipping incorrect handler exception", e );

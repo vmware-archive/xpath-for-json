@@ -36,6 +36,7 @@ import org.codehaus.jackson.JsonNode;
 
 import com.vmware.xpath.TraversalStopException;
 import com.vmware.xpath.XpathVisitorException;
+import com.vmware.xpath.context.Context;
 
 /**
  * 
@@ -47,11 +48,12 @@ public interface JsonXpathVisitor
 {
     /**
      * 
+     * @param ctx TODO
      * @param parent
      * @param currentNodeToSelect
      * @return true always! ignored for now!
      * @throws XpathVisitorException This will not cause the next traversal to stop
      * @throws TraversalStopException if the client wants to abort iterating further
      */
-    boolean visit(JsonNode parent, JsonNode currentNodeToSelect) throws XpathVisitorException, TraversalStopException;
+    boolean visit(Context ctx, JsonNode parent, JsonNode currentNodeToSelect) throws XpathVisitorException, TraversalStopException;
 }
